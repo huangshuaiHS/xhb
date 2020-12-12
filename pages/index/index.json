@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "小互帮",
+  "usingComponents": {
+    "brickLayout": "plugin://brickLayout/brickLayout",
+    "u8-ad": "/components/u8AD/u8AD" 
+  }
+}

@@ -1,0 +1,28 @@
+
+<view class="bg" style="background-image:url({{bgImgUrl}})"></view>
+
+<brickLayout 
+  dataSet="{{dataSet}}"  
+  option="{{brick_option}}" 
+  bind:tapCard="tapCard" 
+  bind:tapLike="handleLike" 
+  bind:tapUser="handleUserEvent"
+  bind:onCardExpanded="handleExpand"
+/>
+<!-- banner广告，按需引入 --> 
+<view class="u8_banner" style="background: #fffff;color:#333;"> 
+	<u8-ad data-id="{{u8ad.ad.banner}}" adData="{{u8ad.adData}}" bindadload="u8adLoad" bindclick="u8adClick" 
+bindclose="u8adClose" class="u8_component"></u8-ad> 
+</view> 
+
+<!-- 插屏广告，按需引入 --> 
+<view class="u8_insert"> 
+	<u8-ad data-id="{{u8ad.ad.insert}}" adData="{{u8ad.adData}}" bindadload="u8adLoad" bindclick="u8adClick" 
+bindclose="u8adClose" class="u8_component"></u8-ad>
+</view> 
+
+<!-- 悬浮广告，按需引入 --> 
+<view class="u8_fixed"> 
+	<u8-ad data-id="{{u8ad.ad.fixed}}" adData="{{u8ad.adData}}" bindadload="u8adLoad" bindclick="u8adClick" 
+bindclose="u8adClose" class="u8_component"></u8-ad> 
+</view> 
