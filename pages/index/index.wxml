@@ -1,14 +1,16 @@
-
 <view class="bg" style="background-image:url({{bgImgUrl}})"></view>
 
-<brickLayout 
-  dataSet="{{dataSet}}"  
-  option="{{brick_option}}" 
-  bind:tapCard="tapCard" 
-  bind:tapLike="handleLike" 
-  bind:tapUser="handleUserEvent"
-  bind:onCardExpanded="handleExpand"
-/>
+
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="userinfo">
+    <open-data type="userAvatarUrl" class="userinfo-avatar" />
+    <text class="userinfo-nickname">{{greetings}}，</text>
+    <open-data type="userNickName" />
+  </view>
+  <brickLayout dataSet="{{dataSet}}" option="{{brick_option}}" bind:tapCard="tapCard" bind:tapLike="handleLike"
+    bind:tapUser="handleUserEvent" bind:onCardExpanded="handleExpand" />
+</view>
 <!-- banner广告，按需引入 --> 
 <view class="u8_banner" style="background: #fffff;color:#333;"> 
 	<u8-ad data-id="{{u8ad.ad.banner}}" adData="{{u8ad.adData}}" bindadload="u8adLoad" bindclick="u8adClick" 

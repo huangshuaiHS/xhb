@@ -3,5 +3,6 @@
   "usingComponents": {
     "brickLayout": "plugin://brickLayout/brickLayout",
     "u8-ad": "/components/u8AD/u8AD" 
-  }
+  },
+  "navigationStyle": "custom"
 }

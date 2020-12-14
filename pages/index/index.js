@@ -3,6 +3,7 @@ var BG_IMG_BASE_URL = 'https://6461-data-1f0e99-1258386784.tcb.qcloud.la/weather
 Page({
   data: {
     bgImgUrl:'',//获取背景
+    greetings: '', // 问候语
     // 需在 data 中配置广告位 
 		u8ad: 
 		{ 
@@ -18,14 +19,16 @@ Page({
   },
   onShow() {
     var _this = this
-
+    _this.setData({
+      greetings: _this.getGreetings()
+    })
 
     //支持页面转发
     wx.showShareMenu({
       withShareTicket: true,
       menus: ['shareAppMessage', 'shareTimeline']
     })
-
+    wx.showLoading()
     //初始化数据
     _this.init()
 
@@ -49,6 +52,8 @@ Page({
       this.setData({
         dataSet: res.result.data
       })
+      // 关闭加载框
+      wx.hideLoading()
     }).catch(res => {
       console.log("获取dataSet出错", res)
     })
@@ -63,6 +68,26 @@ Page({
       }
       _this.setData({adlist:res.data});
     })
+},
+getGreetings(){
+  let h = new Date().getHours()
+  let w = ''
+  if (h > 0 && h <= 5) {
+      w = '深夜'
+  } else if (h > 5 && h <= 9) {
+      w = '早上'
+  } else if (h > 9 && h <= 11) {
+      w = '上午'
+  } else if (h > 11 && h <= 13) {
+      w = '中午'
+  } else if (h > 13 && h <= 17) {
+      w = '下午'
+  } else if (h > 17 && h <= 19) {
+      w = '傍晚'
+  } else {
+      w = '晚上'
+  }
+  return `${w}好`
 },
   handleLike: function (event) {
     wx.showToast({
