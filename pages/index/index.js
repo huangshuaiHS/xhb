@@ -67,6 +67,8 @@ Page({
         res.data[e].encdata={"encdata":res.data[e].encdata};
       }
       _this.setData({adlist:res.data});
+      console.log(_this.data.adlist)
+
     })
 },
 getGreetings(){

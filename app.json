@@ -1,6 +1,8 @@
 {
   "pages":[
-    "pages/index/index"
+    "pages/index/index",
+    "pages/mz/mz",
+    "pages/image/image"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -15,6 +17,24 @@
       "version": "0.2.0",
       "provider": "wx3c042630f3cdc175"
      }
+  },
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "color": "#9A9A9A",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "小程序",
+        "iconPath": "images/xcx1.png",
+        "selectedIconPath": "images/xcx2.png"
+      },
+      {
+        "pagePath": "pages/mz/mz",
+        "text": "妹纸图",
+        "iconPath": "images/mn2.png",
+        "selectedIconPath": "images/mn1.png"
+      }
+    ]
   }
 
 }
